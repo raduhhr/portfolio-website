@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://raduhhr.xyz/" />
   <meta property="og:title" content="Radu Cîrcei – DevOps Support Engineer" />
   <meta property="og:description" content="L3 platform support (Azure/AKS), observability (Grafana), and production homelab automation (Tresor) built and operated as code." />
-  <meta property="og:image" content="https://placehold.co/1200x630/0a0e14/a78bfa.png?text=Radu+C%C3%AErcei+%E2%80%93+DevOps+Engineer&font=raleway" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0a0e14/a78bfa.png?text=Radu+C%C3%AErcei+%E2%80%93+DevOps+Support+Engineer&font=raleway" />
   
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Radu Cîrcei – DevOps Support Engineer" />
@@ -1880,7 +1880,16 @@
       var btn = document.getElementById('menuToggle');
       var nav = document.querySelector('header.site nav');
       if (!btn || !nav) return;
-      btn.addEventListener('click', function() {
+      
+      function closeMenu() {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'menu';
+      }
+      
+      // Toggle menu on button click
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent this click from triggering the document click listener
         var open = nav.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.textContent = open ? 'close' : 'menu';
@@ -1890,11 +1899,22 @@
       nav.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
           if (window.innerWidth <= 768) {
-            nav.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
-            btn.textContent = 'menu';
+            closeMenu();
           }
         });
+      });
+      
+      // Close menu when clicking outside on mobile
+      document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          var isMenuOpen = nav.classList.contains('open');
+          var clickedInsideNav = nav.contains(e.target);
+          var clickedToggle = btn.contains(e.target);
+          
+          if (isMenuOpen && !clickedInsideNav && !clickedToggle) {
+            closeMenu();
+          }
+        }
       });
     })();
 
