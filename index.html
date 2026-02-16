@@ -13,7 +13,6 @@
   <meta property="og:url" content="https://raduhhr.xyz/" />
   <meta property="og:title" content="Radu Cîrcei – DevOps Support Engineer" />
   <meta property="og:description" content="L3 platform support (Azure/AKS), observability (Grafana), and production homelab automation (Tresor) built and operated as code." />
-  <meta property="og:image" content="https://raduhhr.xyz/og-image.svg" />
   <meta property="og:image" content="https://raduhhr.xyz/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -30,10 +29,6 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet" fetchpriority="high">
 
   <link rel="dns-prefetch" href="https://challenges.cloudflare.com">
-
-  <link rel="prefetch" href="#experience">
-  <link rel="prefetch" href="#projects">
-  <link rel="prefetch" href="#contact">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>></text></svg>">
 
@@ -61,7 +56,7 @@
     ],
     "worksFor": {
       "@type": "Organization",
-      "name": "CELUM"
+      "name": "Weasweb"
     }
   }
   </script>
@@ -315,7 +310,7 @@
       font-weight: 400;
       font-size: 13px;
       text-transform: lowercase;
-      transition: all .3s ease-out;
+      transition: background-color .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out;
     }
     nav a:hover {
       background: var(--surface);
@@ -337,7 +332,7 @@
       font-family: var(--mono);
       color: var(--text);
       text-transform: lowercase;
-      transition: all .3s ease-out;
+      transition: background-color .3s ease-out, border-color .3s ease-out;
     }
 
     .theme-toggle:hover {
@@ -441,7 +436,7 @@
       font-weight: 700;
       font-size: 13px;
       cursor: pointer;
-      transition: all .3s ease-out;
+      transition: background-color .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out, transform .3s ease-out, color .3s ease-out;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -482,7 +477,7 @@
       background: var(--bg-alt);
       padding: 24px;
       box-shadow: var(--shadow);
-      transition: all .3s ease-out;
+      transition: border-color .3s ease-out, box-shadow .3s ease-out, transform .3s ease-out, background-color .3s ease-out;
       margin-top: 40px;
     }
 
@@ -564,7 +559,7 @@
       background: var(--border);
     }
 
-    .t-item { position: relative; margin-bottom: 40px; transition: all .3s ease-out; }
+    .t-item { position: relative; margin-bottom: 40px; transition: opacity .3s ease-out, transform .3s ease-out; }
     
     .t-item:hover {
       transform: translateY(-4px);
@@ -580,7 +575,7 @@
       background: var(--accent);
       box-shadow: var(--glow);
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-      transition: all .3s ease-out;
+      transition: background-color .3s ease-out, box-shadow .3s ease-out;
     }
 
     .t-item:hover::before {
@@ -663,7 +658,7 @@
       border: 2px solid var(--border);
       background: var(--bg-alt);
       padding: 28px;
-      transition: all .3s ease-out;
+      transition: border-color .3s ease-out, box-shadow .3s ease-out, transform .3s ease-out, opacity .3s ease-out;
       position: relative;
     }
 
@@ -683,7 +678,7 @@
       color: var(--text);
       text-decoration: none;
       text-transform: lowercase;
-      transition: all .3s ease-out;
+      transition: border-color .3s ease-out, background-color .3s ease-out, opacity .3s ease-out, transform .3s ease-out;
       opacity: 0.7;
       z-index: 2;
     }
@@ -719,7 +714,7 @@
       opacity: 0.7;
       z-index: 2;
       pointer-events: none;
-      transition: all .3s ease-out;
+      transition: opacity .3s ease-out, border-color .3s ease-out, color .3s ease-out, background-color .3s ease-out, transform .3s ease-out;
     }
 
     .prod-badge::before {
@@ -817,7 +812,7 @@
       letter-spacing: 0.5px;
       color: var(--text);
       font-weight: 600;
-      transition: all .3s ease-out;
+      transition: border-color .3s ease-out, box-shadow .3s ease-out, color .3s ease-out;
       opacity: var(--opacity-default);
     }
 
@@ -910,7 +905,7 @@
       letter-spacing: 0.5px;
       padding: 10px 0;
       border-bottom: 1px solid var(--border) !important;
-      transition: all .3s ease-out;
+      transition: border-color .3s ease-out, padding-left .3s ease-out;
     }
 
     .contact-link:hover {
@@ -927,10 +922,6 @@
       background: var(--bg-alt);
       border: 2px solid var(--border);
       padding: 32px;
-    }
-
-    form {
-      content-visibility: auto;
     }
 
     .form-group { 
@@ -958,7 +949,7 @@
       color: var(--text);
       font-family: var(--mono);
       font-size: 13px;
-      transition: all .3s ease-out;
+      transition: border-color .3s ease-out, box-shadow .3s ease-out;
     }
 
     input:focus, textarea:focus {
@@ -1012,7 +1003,7 @@
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      transition: all .3s ease-out;
+      transition: background-color .3s ease-out, border-color .3s ease-out, transform .3s ease-out, box-shadow .3s ease-out;
       margin-top: 8px;
     }
 
@@ -1190,7 +1181,7 @@
         background: var(--accent);
         box-shadow: var(--glow);
         clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-        transition: all .3s ease-out;
+        transition: background-color .3s ease-out, box-shadow .3s ease-out;
       }
 
       .t-item li::before {
@@ -1207,8 +1198,8 @@
       }
 
       .hero-card {
-        transition: all .3s ease-out;
-        opacity: 0.6;
+        transition: opacity .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out;
+        opacity: 0.75;
       }
       
       .hero-card.in-view {
@@ -1293,8 +1284,8 @@
       }
 
       .t-item {
-        transition: all .3s ease-out;
-        opacity: 0.6;
+        transition: opacity .3s ease-out;
+        opacity: 0.75;
       }
 
       .t-item.in-view {
@@ -1316,8 +1307,8 @@
       }
 
       .project {
-        transition: all .3s ease-out;
-        opacity: 0.6;
+        transition: opacity .3s ease-out, box-shadow .3s ease-out;
+        opacity: 0.75;
       }
 
       .project.in-view {
@@ -1339,6 +1330,22 @@
         opacity: 1;
       }
 
+      .project.in-view .prod-badge {
+        opacity: 1;
+        border-color: var(--prod-badge);
+        color: var(--prod-badge);
+        background: var(--surface);
+      }
+
+      .project.in-view .prod-badge::before {
+        color: var(--prod-badge);
+      }
+
+      .project.in-view .repo-link {
+        opacity: 1;
+        border-color: var(--accent);
+      }
+
       [data-theme="dark"] .hero-card.in-view li,
       [data-theme="dark"] .t-item.in-view .t-desc,
       [data-theme="dark"] .t-item.in-view li,
@@ -1351,6 +1358,22 @@
       [data-theme="dark"] .t-item.in-view .t-title,
       [data-theme="dark"] .project.in-view h3 {
         color: var(--accent-hover);
+      }
+
+      [data-theme="dark"] .project.in-view .prod-badge {
+        opacity: 1;
+        border-color: var(--prod-badge);
+        color: var(--prod-badge);
+        background: var(--surface);
+      }
+
+      [data-theme="dark"] .project.in-view .prod-badge::before {
+        color: var(--prod-badge);
+      }
+
+      [data-theme="dark"] .project.in-view .repo-link {
+        opacity: 1;
+        border-color: var(--accent);
       }
     }
 
@@ -1367,6 +1390,22 @@
       :root:not([data-theme="light"]) .t-item.in-view .t-title,
       :root:not([data-theme="light"]) .project.in-view h3 {
         color: var(--accent-hover);
+      }
+
+      :root:not([data-theme="light"]) .project.in-view .prod-badge {
+        opacity: 1;
+        border-color: var(--prod-badge);
+        color: var(--prod-badge);
+        background: var(--surface);
+      }
+
+      :root:not([data-theme="light"]) .project.in-view .prod-badge::before {
+        color: var(--prod-badge);
+      }
+
+      :root:not([data-theme="light"]) .project.in-view .repo-link {
+        opacity: 1;
+        border-color: var(--accent);
       }
     }
 
@@ -1409,12 +1448,12 @@
         </h1>
 
         <p class="tagline">
-          I build and operate production infrastructure. Currently L3 platform support at <strong>CELUM</strong>—previously 
+          I build and operate production infrastructure. Currently L3 platform support at <strong>CELUM</strong>, previously 
           drove security improvements and shipped an AI assistant at <strong>Steelcase</strong>.
         </p>
 
         <div class="cta">
-          <a class="btn primary" href="https://raduhhr.github.io/secure-contact-form/CV11968.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Download CV PDF">download_cv.pdf</a>
+          <a class="btn primary" href="/Radu_Circei.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Download CV PDF">download_cv.pdf</a>
           <a class="btn secondary" href="#contact">send_email()</a>
           <a class="btn secondary" href="https://github.com/raduhhr" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">github()</a>
           <a class="btn secondary" href="https://www.linkedin.com/in/radu-circei/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">linkedin()</a>
@@ -1442,7 +1481,7 @@
           <div class="t-item">
             <div class="t-header">
               <h3 class="t-title">CELUM (Contractor via Weasweb) – DevOps Support Engineer</h3>
-              <span class="t-meta">dec 2025 – present · remote</span>
+              <span class="t-meta">dec 2025 – present · ~2 mo · remote</span>
             </div>
             <p class="t-desc">L3 platform operations for a Digital Asset Management platform across Azure/AKS and on-prem. Root-cause isolation using Grafana + centralized logs, structured bug/feature escalation, and operational lifecycle management.</p>
             <ul>
@@ -1456,9 +1495,9 @@
           <div class="t-item">
             <div class="t-header">
               <h3 class="t-title">Steelcase – Service Desk Analyst L2</h3>
-              <span class="t-meta">feb 2024 – dec 2025 · cluj-napoca (hybrid)</span>
+              <span class="t-meta">feb 2024 – dec 2025 · ~2 yrs · cluj-napoca (hybrid)</span>
             </div>
-            <p class="t-desc">Top-performing analyst focused on security, automation, and process improvement for North America support team.</p>
+            <p class="t-desc">Shipped an AI chatbot from zero allocation, led security incident response, and drove process automation across the NA support team.</p>
             <ul>
               <li><strong>Proposed and delivered <a href="#ai-chatbot">AI chatbot MVP</a></strong> (RAG-based ServiceNow assistant in Teams): designed dual-agent architecture, ran structured testing rounds, analyzed failure modes (traced to KB gaps, not retrieval logic), and produced rollout plan with automation roadmap (Graph Connector → Power Automate ticket creation).</li>
               <li>Led security incident response: investigated phishing campaigns, stopped a live intrusion attempt, and improved escalation workflows.</li>
@@ -1471,7 +1510,7 @@
           <div class="t-item">
             <div class="t-header">
               <h3 class="t-title">Electronic Arts – BioWare – QA Tester</h3>
-              <span class="t-meta">oct 2022 – sept 2023 · remote</span>
+              <span class="t-meta">oct 2022 – sept 2023 · ~1 yr · remote</span>
             </div>
             <p class="t-desc">Quality assurance for Star Wars: The Old Republic; built testing discipline, issue triage, and crisp reporting practices.</p>
             <ul>
@@ -1497,16 +1536,16 @@
             </h3>
             <p>
               Self-hosted production platform managed as infrastructure-as-code. Segmented networks, zero-trust ingress (Cloudflare Tunnel), 
-              full observability stack, and VPS proxy layer—provisioned end-to-end with Ansible.
+              full observability stack, and VPS proxy layer, provisioned end-to-end with Ansible.
             </p>
             <div class="project-detail-grid">
               <ul>
                 <li>End-to-end Ansible provisioning: users, firewall, Docker networks, services, monitoring.</li>
-                <li>VPS with two proxies, managed with the same Ansible/IaC approach.</li>
+                <li>Two-tier architecture: Hetzner VPS as public edge (Velocity for Minecraft, Nginx for Jellyfin + WireGuard), homelab as private backend. No direct exposure, all traffic tunneled.</li>
                 <li>Network segmentation: public apps isolated from LAN-only services; ingress only through Tunnel/reverse proxy (via VPS).</li>
               </ul>
               <ul>
-                <li>High uptime; monitored via grafana and uptime-kuma.</li>
+                <li>QA environment (tresor-vm) for testing infra changes before prod; Grafana + Uptime Kuma for observability.</li>
                 <li>Designed for operational rigor: no public exposure by default, rate limiting + Turnstile on endpoints, least-privilege defaults.</li>
               </ul>
             </div>
@@ -1526,13 +1565,13 @@
           <div class="project" id="ai-chatbot">
             <h3>service desk ai chatbot</h3>
             <p>
-              RAG-based assistant for Steelcase's service desk team to surface ServiceNow documentation directly in Teams. Built the MVP end-to-end with zero dedicated allocation — from architecture to testing to rollout planning.
+              RAG-based assistant for Steelcase's service desk team to surface ServiceNow documentation directly in Teams. Built the MVP end-to-end with zero dedicated allocation, from architecture to testing to rollout planning.
             </p>
             <div class="project-detail-grid">
               <ul>
                 <li>Dual-agent architecture: one bot for end users, one for the service desk team, both backed by the same knowledge source.</li>
                 <li>Ran structured testing rounds with the team and validated answer consistency across both agents.</li>
-                <li>Analyzed response gaps: most failures traced to missing or outdated KB articles, not retrieval logic — documented remediation list.</li>
+                <li>Analyzed response gaps: most failures traced to missing or outdated KB articles, not retrieval logic. Documented remediation list.</li>
               </ul>
               <ul>
                 <li>KB ingestion via manual PDF export from ServiceNow into SharePoint (documented automation path via Graph Connector).</li>
@@ -1637,7 +1676,7 @@
               <span class="t-meta">2021 – 2024</span>
             </div>
             <p class="t-desc">
-              Formal coursework while working full-time in IT (EA → Steelcase → CELUM). Chose hands-on infrastructure work over finishing the degree.
+              Concurrent with full-time roles at EA and Steelcase.
             </p>
           </div>
         </div>
@@ -1660,7 +1699,7 @@
               <a class="contact-link" href="https://www.linkedin.com/in/radu-circei/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
                 linkedin/radu-circei
               </a>
-              <a class="contact-link" href="https://raduhhr.github.io/secure-contact-form/CV11968.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Download CV PDF">
+              <a class="contact-link" href="/Radu_Circei.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Download CV PDF">
                 download_cv.pdf
               </a>
             </div>
@@ -1732,7 +1771,7 @@
   <footer>
     <div class="wrap">
       <div class="links">
-        <a href="https://raduhhr.github.io/secure-contact-form/CV11968.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Download CV PDF">cv.pdf</a>
+        <a href="/Radu_Circei.pdf" target="_blank" rel="noopener noreferrer" download aria-label="Download CV PDF">cv.pdf</a>
         <span style="color: var(--border);">|</span>
         <a href="https://github.com/raduhhr" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">github</a>
         <span style="color: var(--border);">|</span>
@@ -1892,15 +1931,13 @@
         btn.textContent = 'menu';
       }
       
-      // Toggle menu on button click
       btn.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent this click from triggering the document click listener
+        e.stopPropagation();
         var open = nav.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.textContent = open ? 'close' : 'menu';
       });
       
-      // Auto-close menu when nav link is clicked on mobile
       nav.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
           if (window.innerWidth <= 768) {
@@ -1909,7 +1946,6 @@
         });
       });
       
-      // Close menu when clicking outside on mobile
       document.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
           var isMenuOpen = nav.classList.contains('open');
@@ -2100,11 +2136,8 @@
             charCount.classList.remove('warning', 'error');
           }
           
-          if (window.turnstile && turnstileWidget) {
-            const widgetId = turnstileWidget.dataset.widgetId;
-            if (widgetId) {
-              window.turnstile.reset(widgetId);
-            }
+          if (window.turnstile) {
+            window.turnstile.reset();
           }
         } else if (response.status === 429) {
           showStatus('error', 'Rate limit exceeded. Please try again in an hour.');
