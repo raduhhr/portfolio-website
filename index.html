@@ -4,23 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Radu Cîrcei – DevOps Support Engineer</title>
-  <meta name="description" content="DevOps Support Engineer portfolio of Radu Cîrcei – L3 platform support (Azure/AKS), automation, secure homelab (Tresor), AI chatbot at Steelcase, and infrastructure projects." />
+  <meta name="description" content="Radu Cîrcei – Platform support at CELUM, homelab tinkerer, previously shipped an AI assistant at Steelcase. Portfolio showcasing DevOps, automation, and infrastructure projects." />
   <meta name="robots" content="index, follow" />
 
   <link rel="canonical" href="https://raduhhr.xyz/" />
-  
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://raduhhr.xyz/" />
   <meta property="og:title" content="Radu Cîrcei – DevOps Support Engineer" />
-  <meta property="og:description" content="L3 platform support (Azure/AKS), observability (Grafana), and production homelab automation (Tresor) built and operated as code." />
+  <meta property="og:description" content="Platform support at CELUM, homelab tinkerer, previously shipped an AI assistant at Steelcase." />
   <meta property="og:image" content="https://raduhhr.xyz/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Radu Cîrcei - DevOps Support Engineer" />
-  
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Radu Cîrcei – DevOps Support Engineer" />
-  <meta name="twitter:description" content="L3 platform support on Azure/AKS, Grafana-driven diagnostics, and Tresor: production homelab + VPS proxies managed with Ansible." />
+  <meta name="twitter:description" content="Platform support at CELUM, homelab tinkerer, previously shipped an AI assistant at Steelcase." />
   <meta name="twitter:image" content="https://raduhhr.xyz/og-image.png" />
   <meta name="twitter:image:alt" content="Radu Cîrcei - DevOps Support Engineer" />
 
@@ -61,7 +61,7 @@
   }
   </script>
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Turnstile loaded lazily when #contact scrolls into view -->
 
   <style>
     :root {
@@ -74,6 +74,7 @@
       --accent: #2A5A7A;
       --accent-dim: #1A4058;
       --accent-bright: #3D6E8E;
+      --accent-hover: #3D6E8E;
       --warning: #DC322F;
       --amber: #CB4B16;
       --success: #2AA198;
@@ -82,6 +83,8 @@
       --mono: 'JetBrains Mono', 'Courier New', monospace;
       --shadow: 0 4px 12px rgba(0,0,0,.08);
       --glow: 0 0 12px rgba(42,90,122,.2);
+      --hero-glow: 0 0 8px rgba(42,90,122,.15);
+      --hero-glow-hover: 0 0 4px rgba(42,90,122,.08);
       --maxw: 1200px;
       --opacity-default: 0.92;
       --opacity-hover: 1;
@@ -106,87 +109,71 @@
       --prod-badge-muted: #358745;
       --shadow: 0 8px 24px rgba(0,0,0,.4);
       --glow: 0 0 20px rgba(167,139,250,.3);
+      --hero-glow: 0 0 8px rgba(167,139,250,.2);
+      --hero-glow-hover: 0 0 4px rgba(167,139,250,.1);
     }
 
-    [data-theme="dark"] .hero h1 .accent {
-      text-shadow: 0 0 8px rgba(167,139,250,.2);
+    /* ── Screenshot blocks ── */
+    .project-screenshots {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0 20px;
     }
 
-    [data-theme="dark"] .hero h1:hover .accent {
-      text-shadow: 0 0 4px rgba(167,139,250,.1);
+    .project-screenshots.two-col {
+      grid-template-columns: 1fr 1fr;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg: #0a0e14;
-        --bg-alt: #0d1117;
-        --surface: #161b22;
-        --border: #30363d;
-        --text: #e6edf3;
-        --muted: #8b949e;
-        --accent: #a78bfa;
-        --accent-dim: #8b5cf6;
-        --accent-bright: #c4b5fd;
-        --accent-hover: #b197fc;
-        --warning: #f85149;
-        --amber: #ffa657;
-        --success: #3fb950;
-        --prod-badge: #2d9940;
-        --prod-badge-muted: #358745;
-        --shadow: 0 8px 24px rgba(0,0,0,.4);
-        --glow: 0 0 20px rgba(167,139,250,.3);
-      }
-
-      :root:not([data-theme="light"]) .hero h1 .accent {
-        text-shadow: 0 0 8px rgba(167,139,250,.2);
-      }
-
-      :root:not([data-theme="light"]) .hero h1:hover .accent {
-        text-shadow: 0 0 4px rgba(167,139,250,.1);
-      }
+    .screenshot-wrap {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color .3s ease-out;
     }
 
-    [data-theme="dark"] .hero-card:hover li,
-    [data-theme="dark"] .t-item:hover .t-desc,
-    [data-theme="dark"] .t-item:hover li,
-    [data-theme="dark"] .project:hover p,
-    [data-theme="dark"] .project:hover li {
-      opacity: 1;
+    .project:hover .screenshot-wrap {
+      border-color: var(--accent);
     }
 
-    [data-theme="dark"] .hero-card:hover h3,
-    [data-theme="dark"] .t-item:hover .t-title,
-    [data-theme="dark"] .project:hover h3 {
-      color: var(--accent-hover);
+    .screenshot-wrap img {
+      width: 100%;
+      display: block;
+      filter: grayscale(15%);
+      transition: filter .3s ease-out;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) .hero-card:hover li,
-      :root:not([data-theme="light"]) .t-item:hover .t-desc,
-      :root:not([data-theme="light"]) .t-item:hover li,
-      :root:not([data-theme="light"]) .project:hover li {
-        opacity: 1;
-      }
+    .project:hover .screenshot-wrap img {
+      filter: grayscale(0%);
+    }
 
-      :root:not([data-theme="light"]) .hero-card:hover h3,
-      :root:not([data-theme="light"]) .t-item:hover .t-title,
-      :root:not([data-theme="light"]) .project:hover h3 {
-        color: var(--accent-hover);
+    .screenshot-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      padding: 5px 8px;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    @media (max-width: 768px) {
+      .project-screenshots.two-col {
+        grid-template-columns: 1fr;
       }
     }
+    /* ─────────────────────── */
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; overflow-x: hidden; }
-    
+
     html {
       transition: background-color 0.5s ease, color 0.5s ease;
       scroll-behavior: smooth;
     }
-    
+
     html.theme-transitioning * {
       transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease !important;
     }
-    
+
     body {
       font-family: var(--mono);
       color: var(--text);
@@ -230,20 +217,68 @@
       .theme-toggle { font-size: 14px; padding: 8px 12px; }
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,.015) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(0,0,0,.015) 3px
-      );
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.5;
+    /* ── Large screens (1440p / 2K+) ── */
+    @media (min-width: 1440px) {
+      :root { --maxw: 1400px; }
+      body { font-size: 18px; }
+      .wrap { padding: 0 64px; }
+      .hero { padding: 120px 0 100px; }
+      section { padding: 100px 0; }
+      .hero h1 { font-size: clamp(56px, 5.5vw, 80px); margin-bottom: 24px; }
+      .hero .tagline { font-size: clamp(17px, 1.8vw, 20px); margin-bottom: 32px; max-width: 720px; }
+      .btn { padding: 16px 28px; font-size: 15px; }
+      .hero-card { padding: 40px; margin-top: 56px; }
+      .hero-card h3 { font-size: 17px; margin-bottom: 24px; }
+      .hero-card li { font-size: 16px; margin-bottom: 14px; }
+      h2 { font-size: clamp(36px, 4.5vw, 52px); }
+      .section-header { margin-bottom: 44px; }
+      .t-title { font-size: 22px; }
+      .t-desc { font-size: 17px; }
+      .t-item li { font-size: 16px; }
+      .t-meta { font-size: 14px; }
+      .t-item { margin-bottom: 48px; }
+      .timeline { padding-left: 28px; }
+      .project { padding: 40px; }
+      .project h3 { font-size: 24px; margin-bottom: 14px; }
+      .project p { font-size: 17px; margin-bottom: 24px; }
+      .project li { font-size: 16px; margin-bottom: 12px; }
+      .tag { font-size: 13px; padding: 7px 14px; }
+      .sub-projects-header { font-size: 20px; }
+      .sub-projects-grid .project { padding: 24px 24px 24px 28px; }
+      .sub-projects-grid .project h3 { font-size: 18px; }
+      .sub-projects-grid .project p { font-size: 14px; }
+      .sub-projects-grid .project .tag { font-size: 11px; padding: 4px 10px; }
+      .contact-info p { font-size: 17px; }
+      .contact-link { font-size: 16px; }
+      .contact-form { padding: 48px; }
+      .contact-grid { gap: 64px; }
+      .form-group label { font-size: 15px; margin-bottom: 12px; }
+      input, textarea { font-size: 16px; padding: 16px; }
+      button[type="submit"] { font-size: 15px; padding: 16px 32px; }
+      nav a { font-size: 15px; padding: 10px 16px; }
+      .nav { height: 68px; }
+      .brand { font-size: 17px; }
+      .theme-toggle { font-size: 15px; padding: 8px 14px; }
+    }
+
+    /* Scanline overlay — desktop only, skip on mobile for scroll perf */
+    @media (min-width: 769px) {
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0,0,0,.015) 0px,
+          transparent 1px,
+          transparent 2px,
+          rgba(0,0,0,.015) 3px
+        );
+        pointer-events: none;
+        z-index: 200;
+        opacity: 0.5;
+        will-change: transform; /* promote to own layer so it doesn't repaint content */
+      }
     }
 
     a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .3s ease-out; }
@@ -379,7 +414,7 @@
 
     .hero h1 .accent {
       color: var(--accent-bright);
-      text-shadow: 0 0 8px rgba(42,90,122,.15);
+      text-shadow: var(--hero-glow);
       transition: color .3s ease-out, text-shadow .3s ease-out;
       display: inline-block;
     }
@@ -398,7 +433,7 @@
 
     .hero h1:hover .accent {
       color: var(--accent-dim);
-      text-shadow: 0 0 4px rgba(42,90,122,.08);
+      text-shadow: var(--hero-glow-hover);
       transform: translateX(3px);
     }
 
@@ -489,7 +524,7 @@
     }
 
     .hero-card:hover h3 {
-      color: var(--accent-bright);
+      color: var(--accent-hover);
     }
 
     .hero-card:hover li {
@@ -560,11 +595,11 @@
     }
 
     .t-item { position: relative; margin-bottom: 40px; transition: opacity .3s ease-out, transform .3s ease-out; }
-    
+
     .t-item:hover {
       transform: translateY(-4px);
     }
-    
+
     .t-item::before {
       content: "";
       position: absolute;
@@ -591,7 +626,7 @@
       transition: opacity .3s ease-out;
       padding-left: 8px;
     }
-    
+
     .t-item li {
       padding-left: 24px;
       position: relative;
@@ -603,7 +638,7 @@
     }
 
     .t-item:hover .t-title {
-      color: var(--accent-bright);
+      color: var(--accent-hover);
     }
 
     .t-item:hover .t-desc,
@@ -702,9 +737,10 @@
       right: 28px;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 6px 12px;
-      border: 1px solid var(--border);
+      gap: 6px;
+      padding: 6px 14px;
+      border: 1px dashed var(--prod-badge-muted);
+      border-radius: 20px;
       background: var(--bg);
       font-family: var(--mono);
       font-weight: 700;
@@ -718,10 +754,13 @@
     }
 
     .prod-badge::before {
-      content: "✓";
-      color: var(--prod-badge-muted);
-      font-weight: 700;
-      transition: color .3s ease-out;
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--prod-badge-muted);
+      flex-shrink: 0;
+      transition: background-color .3s ease-out;
     }
 
     .project:hover .repo-link {
@@ -736,9 +775,9 @@
       background: var(--surface);
       transform: translateX(2px);
     }
-    
+
     .project:hover .prod-badge::before {
-      color: var(--prod-badge);
+      background: var(--prod-badge);
     }
 
     .project:hover {
@@ -748,7 +787,7 @@
     }
 
     .project:hover h3 {
-      color: var(--accent-bright);
+      color: var(--accent-hover);
     }
 
     .project:hover p,
@@ -868,6 +907,68 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
+    }
+
+    .sub-projects-grid .project {
+      padding: 20px 20px 20px 24px;
+      border-width: 1px;
+      border-left: 3px solid var(--border);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .sub-projects-grid .project:hover,
+    .sub-projects-grid .project.in-view {
+      border-left-color: var(--accent);
+      box-shadow: none;
+      transform: translateX(4px);
+    }
+
+    .sub-projects-grid .project h3 {
+      font-size: 16px;
+      padding-right: 70px;
+      margin-bottom: 6px;
+    }
+
+    .sub-projects-grid .project p {
+      font-size: 13px;
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .sub-projects-grid .project .tags {
+      gap: 6px;
+    }
+
+    .sub-projects-grid .project .tag {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+
+    .sub-projects-grid .project .repo-link {
+      top: 18px;
+      right: 18px;
+      font-size: 10px;
+      padding: 4px 8px;
+    }
+
+    @media (max-width: 980px) {
+      .sub-projects-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .sub-projects-grid .project {
+        padding: 16px 16px 16px 20px;
+      }
+
+      .sub-projects-grid .project h3 {
+        font-size: 15px;
+      }
+
+      .sub-projects-grid .project .repo-link {
+        top: 14px;
+        right: 14px;
+      }
     }
 
     .contact-grid {
@@ -1053,6 +1154,14 @@
     footer { padding: 40px 0; text-align: center; color: var(--text); font-size: 12px; opacity: var(--opacity-default); }
     footer .links { display: flex; justify-content: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
 
+    /* ── Off-screen sections: let browser skip rendering until needed ── */
+    #projects,
+    #education,
+    #contact {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 600px;
+    }
+
     @media (max-width: 980px) {
       .contact-grid { grid-template-columns: 1fr; gap: 32px; }
       .project-detail-grid { grid-template-columns: 1fr; }
@@ -1074,10 +1183,6 @@
       .menu-toggle { 
         order: 3; 
         display: block; 
-      }
-
-      body::before {
-        opacity: 0.3;
       }
 
       .hero .tagline,
@@ -1143,11 +1248,11 @@
         padding-left: 32px;
         position: relative;
       }
-      
+
       .t-item {
         padding: 12px 0;
       }
-      
+
       .t-title { font-size: 18px; }
       .t-desc { font-size: 14px; }
       .t-item li { font-size: 13px; }
@@ -1201,7 +1306,7 @@
         transition: opacity .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out;
         opacity: 0.75;
       }
-      
+
       .hero-card.in-view {
         opacity: 1;
         border-color: var(--accent);
@@ -1209,7 +1314,7 @@
       }
 
       .hero-card.in-view h3 {
-        color: var(--accent-bright);
+        color: var(--accent-hover);
       }
 
       .hero-card.in-view li {
@@ -1254,63 +1359,218 @@
         background: var(--bg-alt);
         padding-left: 12px;
       }
-      
+
       .t-item:hover {
         transform: none;
       }
     }
 
-    @media (min-width: 769px) {
-      .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity .6s ease, transform .6s ease;
+    /* ── Touch devices: kill ALL sticky :hover states ── */
+    @media (hover: none), (pointer: coarse) {
+      /* Nav + chrome */
+      nav a:hover {
+        background: transparent;
+        border-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: none;
+        color: var(--accent);
       }
 
-      .reveal.in { 
-        opacity: 1; 
-        transform: translateY(0);
+      .theme-toggle:hover,
+      .menu-toggle:hover {
+        background: var(--surface);
+        border-color: var(--border);
+        box-shadow: none;
+        color: var(--text);
       }
-      
-      .hero-card.reveal.in {
+
+      /* CTA / generic buttons */
+      .btn:hover {
+        background: var(--surface);
+        border-color: var(--border);
+        box-shadow: none;
+        transform: none;
+        color: var(--text);
+      }
+
+      .btn.primary:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--bg);
+        box-shadow: none;
         transform: none;
       }
-    }
 
-    @media (max-width: 768px) {
-      .reveal {
-        opacity: 1;
+      .btn.secondary:hover {
+        background: transparent;
+        border-color: var(--border);
+        color: var(--text);
+        box-shadow: none;
         transform: none;
       }
 
-      .t-item {
-        transition: opacity .3s ease-out;
-        opacity: 0.75;
+      /* Project cards */
+      .project:hover {
+        border-color: var(--border);
+        box-shadow: none;
+        transform: none;
       }
 
-      .t-item.in-view {
-        opacity: 1;
+      .project:hover h3 { color: var(--text); }
+      .project:hover p,
+      .project:hover li { opacity: var(--opacity-mobile); }
+
+      .project:hover .tag {
+        border-color: var(--border);
+        box-shadow: none;
+        color: var(--text);
       }
 
-      .t-item.in-view::before {
-        background: var(--accent-bright);
-        box-shadow: 0 0 16px rgba(42,90,122,.6);
+      .project:hover .screenshot-wrap { border-color: var(--border); }
+      .project:hover .screenshot-wrap img { filter: grayscale(15%); }
+
+      .project:hover .repo-link {
+        opacity: 0.7;
+        border-color: var(--border);
+        transform: none;
       }
 
-      .t-item.in-view .t-title {
+      .project:hover .prod-badge {
+        opacity: 0.7;
+        border-color: var(--prod-badge-muted);
+        color: var(--prod-badge-muted);
+        background: var(--bg);
+        transform: none;
+      }
+
+      .project:hover .prod-badge::before { background: var(--prod-badge-muted); }
+
+      .repo-link:hover {
+        border-color: var(--border);
+        background: var(--bg);
+        opacity: 0.7;
+        transform: none;
+      }
+
+      /* Hero card */
+      .hero-card:hover {
+        border-color: var(--border);
+        box-shadow: var(--shadow);
+        transform: none !important;
+        background: var(--bg-alt);
+      }
+
+      .hero-card:hover h3 { color: var(--text); }
+      .hero-card:hover li { opacity: var(--opacity-mobile); }
+
+      /* Timeline items */
+      .t-item:hover { transform: none; }
+      .t-item:hover .t-title { color: var(--text); }
+      .t-item:hover .t-desc,
+      .t-item:hover li { opacity: var(--opacity-mobile); }
+      .t-item:hover::before {
+        background: var(--accent);
+        box-shadow: var(--glow);
+      }
+
+      /* Contact links */
+      .contact-link:hover {
+        border-bottom-color: var(--border) !important;
+        padding-left: 0;
+      }
+
+      /* Submit button */
+      button[type="submit"]:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Sub-project cards */
+      .sub-projects-grid .project:hover {
+        border-left-color: var(--border);
+        transform: none;
+      }
+
+      /* Hero title */
+      .hero h1:hover .accent {
+        color: var(--accent-bright);
+        text-shadow: var(--hero-glow);
+        transform: none;
+      }
+
+      .hero h1:hover .accent.support::after {
         color: var(--accent-bright);
       }
 
-      .t-item.in-view .t-desc,
-      .t-item.in-view li {
-        opacity: 1;
+      /* Kill tap highlight + outline for taps */
+      nav a,
+      .theme-toggle,
+      .menu-toggle,
+      .btn,
+      .contact-link,
+      .repo-link,
+      button[type="submit"] {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+
+      nav a:focus:not(:focus-visible),
+      .theme-toggle:focus:not(:focus-visible),
+      .menu-toggle:focus:not(:focus-visible),
+      .btn:focus:not(:focus-visible),
+      .contact-link:focus:not(:focus-visible),
+      .repo-link:focus:not(:focus-visible),
+      button[type="submit"]:focus:not(:focus-visible) {
+        outline: none;
+      }
+    }
+
+    /* ── Mobile: strip heavy transitions during scroll ── */
+    @media (max-width: 768px) {
+      /* Only keep transitions on elements that actually animate via IO or tap */
+      .hero-card,
+      .t-item,
+      .project,
+      nav {
+        transition: opacity .25s ease-out, border-color .25s ease-out, box-shadow .25s ease-out;
+      }
+
+      /* Everything else: instant state changes */
+      .hero-card h3,
+      .hero-card li,
+      .t-item::before,
+      .t-title,
+      .t-desc,
+      .t-item li,
+      .project h3,
+      .project p,
+      .project li,
+      .tag,
+      .prod-badge,
+      .repo-link,
+      .screenshot-wrap,
+      .screenshot-wrap img {
+        transition: none;
       }
 
       .project {
-        transition: opacity .3s ease-out, box-shadow .3s ease-out;
-        opacity: 0.75;
+        transition: opacity .25s ease-out, box-shadow .25s ease-out, border-color .25s ease-out;
       }
-
+      
+      .project.in-view {
+        border-color: var(--accent);
+      }
+      
+      .project.in-view .screenshot-wrap {
+        border-color: var(--accent);
+      }
+      
+      .project.in-view .screenshot-wrap img {
+        filter: grayscale(0%);
+      }
+      
       .project.in-view {
         opacity: 1;
         box-shadow: var(--glow);
@@ -1322,7 +1582,7 @@
       }
 
       .project.in-view h3 {
-        color: var(--accent-bright);
+        color: var(--accent-hover);
       }
 
       .project.in-view p,
@@ -1338,7 +1598,7 @@
       }
 
       .project.in-view .prod-badge::before {
-        color: var(--prod-badge);
+        background: var(--prod-badge);
       }
 
       .project.in-view .repo-link {
@@ -1346,66 +1606,56 @@
         border-color: var(--accent);
       }
 
-      [data-theme="dark"] .hero-card.in-view li,
-      [data-theme="dark"] .t-item.in-view .t-desc,
-      [data-theme="dark"] .t-item.in-view li,
-      [data-theme="dark"] .project.in-view p,
-      [data-theme="dark"] .project.in-view li {
+      .sub-projects-grid .project.in-view {
+        border-left-color: var(--accent);
+        box-shadow: none;
+      }
+
+      .t-item {
+        transition: opacity .25s ease-out;
+        opacity: 0.75;
+      }
+
+      .t-item.in-view {
         opacity: 1;
       }
 
-      [data-theme="dark"] .hero-card.in-view h3,
-      [data-theme="dark"] .t-item.in-view .t-title,
-      [data-theme="dark"] .project.in-view h3 {
+      .t-item.in-view::before {
+        background: var(--accent-bright);
+        box-shadow: 0 0 16px rgba(42,90,122,.6);
+      }
+
+      .t-item.in-view .t-title {
         color: var(--accent-hover);
       }
 
-      [data-theme="dark"] .project.in-view .prod-badge {
+      .t-item.in-view .t-desc,
+      .t-item.in-view li {
         opacity: 1;
-        border-color: var(--prod-badge);
-        color: var(--prod-badge);
-        background: var(--surface);
-      }
-
-      [data-theme="dark"] .project.in-view .prod-badge::before {
-        color: var(--prod-badge);
-      }
-
-      [data-theme="dark"] .project.in-view .repo-link {
-        opacity: 1;
-        border-color: var(--accent);
       }
     }
 
-    @media (max-width: 768px) and (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) .hero-card.in-view li,
-      :root:not([data-theme="light"]) .t-item.in-view .t-desc,
-      :root:not([data-theme="light"]) .t-item.in-view li,
-      :root:not([data-theme="light"]) .project.in-view p,
-      :root:not([data-theme="light"]) .project.in-view li {
+    @media (min-width: 769px) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+
+      .reveal.in { 
+        opacity: 1; 
+        transform: translateY(0);
+      }
+
+      .hero-card.reveal.in {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .reveal {
         opacity: 1;
-      }
-
-      :root:not([data-theme="light"]) .hero-card.in-view h3,
-      :root:not([data-theme="light"]) .t-item.in-view .t-title,
-      :root:not([data-theme="light"]) .project.in-view h3 {
-        color: var(--accent-hover);
-      }
-
-      :root:not([data-theme="light"]) .project.in-view .prod-badge {
-        opacity: 1;
-        border-color: var(--prod-badge);
-        color: var(--prod-badge);
-        background: var(--surface);
-      }
-
-      :root:not([data-theme="light"]) .project.in-view .prod-badge::before {
-        color: var(--prod-badge);
-      }
-
-      :root:not([data-theme="light"]) .project.in-view .repo-link {
-        opacity: 1;
-        border-color: var(--accent);
+        transform: none;
       }
     }
 
@@ -1448,8 +1698,7 @@
         </h1>
 
         <p class="tagline">
-          I build and operate production infrastructure. Currently L3 platform support at <strong>CELUM</strong>, previously 
-          drove security improvements and shipped an AI assistant at <strong>Steelcase</strong>.
+          Platform support at <strong>CELUM</strong>, homelab tinkerer, previously shipped an AI assistant at <strong>Steelcase</strong>.
         </p>
 
         <div class="cta">
@@ -1481,7 +1730,7 @@
           <div class="t-item">
             <div class="t-header">
               <h3 class="t-title">CELUM (Contractor via Weasweb) – DevOps Support Engineer</h3>
-              <span class="t-meta">dec 2025 – present · ~2 mo · remote</span>
+              <span class="t-meta">dec 2025 – present · remote</span>
             </div>
             <p class="t-desc">L3 platform operations for a Digital Asset Management platform across Azure/AKS and on-prem. Root-cause isolation using Grafana + centralized logs, structured bug/feature escalation, and operational lifecycle management.</p>
             <ul>
@@ -1535,29 +1784,52 @@
               <a href="https://github.com/raduhhr/tresor-public" target="_blank" rel="noopener noreferrer" aria-label="Open repository">tresor homelab</a>
             </h3>
             <p>
-              Self-hosted production platform managed as infrastructure-as-code. Segmented networks, zero-trust ingress (Cloudflare Tunnel), 
-              full observability stack, and VPS proxy layer, provisioned end-to-end with Ansible.
+              Self-hosted production platform managed entirely as infrastructure-as-code. Three hosts (prod, QA VM, Hetzner VPS edge), five isolated Docker networks, zero-trust ingress, and a full observability stack. Provisioned end-to-end with 22 Ansible roles and 120+ playbooks. No manual steps after SSH is up.
             </p>
             <div class="project-detail-grid">
               <ul>
-                <li>End-to-end Ansible provisioning: users, firewall, Docker networks, services, monitoring.</li>
-                <li>Two-tier architecture: Hetzner VPS as public edge (Velocity for Minecraft, Nginx for Jellyfin + WireGuard), homelab as private backend. No direct exposure, all traffic tunneled.</li>
-                <li>Network segmentation: public apps isolated from LAN-only services; ingress only through Tunnel/reverse proxy (via VPS).</li>
+                <li>Hetzner VPS as public edge (Velocity for Minecraft, nginx for Jellyfin Music + FileBrowser over WireGuard); tresor as private backend with no exposed ports. All public traffic enters through Cloudflare Tunnel or WireGuard.</li>
+                <li>Five Docker networks enforcing strict traffic boundaries: <code>public_net</code> (CF Tunnel + Traefik), <code>internal_net</code> (LAN-only), <code>mc_net</code> / <code>mc_pub</code> (Minecraft backend + WG bridge), <code>lan_pub</code>. LAN services bind to 192.168.0.42, WG services to 10.66.66.2, never 0.0.0.0.</li>
+                <li>Version pinning centralized in <code>group_vars/prod/versions.yml</code>, Vault per environment (prod/qa/vps), consistent 8-playbook lifecycle per service (deploy, remove, backup, start, stop, restart, status, update), infra-wide <code>backup-all.yml</code> and <code>status-all.yml</code> rollups.</li>
               </ul>
               <ul>
-                <li>QA environment (tresor-vm) for testing infra changes before prod; Grafana + Uptime Kuma for observability.</li>
-                <li>Designed for operational rigor: no public exposure by default, rate limiting + Turnstile on endpoints, least-privilege defaults.</li>
+                <li><code>tresor-ctl</code>: Python TUI (Rich + Questionary + Paramiko) that auto-discovers services from the playbook directory tree and runs lifecycle actions over live SSH.</li>
+                <li>QA environment (<code>tresor-vm</code> KVM sandbox) for testing roles before prod. <code>verify-*.yml</code> playbooks confirm base, Docker, networks, and WireGuard state post-deploy.</li>
+                <li>Services: Jellyfin, Jellyfin Music, FileBrowser (personal + 1TB friends drop), Grafana + Prometheus + Node Exporter + cAdvisor, Uptime Kuma, Kiwix (110GB offline Wikipedia), PaperMC, three Discord bots.</li>
               </ul>
             </div>
+
+            <!-- tresor-ctl screenshot (full width) -->
+            <div class="project-screenshots">
+              <div class="screenshot-wrap">
+                <img src="/tresor-ctl.png" alt="tresor-ctl TUI showing all services with version, state, uptime, memory and CPU across both hosts" loading="lazy" decoding="async" />
+                <div class="screenshot-label">tresor-ctl // service dashboard</div>
+              </div>
+            </div>
+
+            <!-- Grafana dashboards (2-col) -->
+            <div class="project-screenshots two-col">
+              <div class="screenshot-wrap">
+                <img src="/grafana-host.png" alt="Grafana host dashboard" loading="lazy" decoding="async" />
+                <div class="screenshot-label">grafana // host dashboard</div>
+              </div>
+              <div class="screenshot-wrap">
+                <img src="/grafana-containers.png" alt="Grafana containers dashboard" loading="lazy" decoding="async" />
+                <div class="screenshot-label">grafana // containers dashboard</div>
+              </div>
+            </div>
+
             <div class="tags">
               <span class="tag">ansible</span>
               <span class="tag">docker</span>
+              <span class="tag">wireguard</span>
               <span class="tag">traefik</span>
               <span class="tag">cloudflare tunnel</span>
               <span class="tag">grafana</span>
               <span class="tag">prometheus</span>
               <span class="tag">debian</span>
               <span class="tag">ufw/fail2ban</span>
+              <span class="tag">python</span>
             </div>
             <a href="https://github.com/raduhhr/tresor-public" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="View repository">repo</a>
           </div>
@@ -1673,10 +1945,10 @@
           <div class="t-item">
             <div class="t-header">
               <h3 class="t-title">Informatics & Economics (FSEGA)</h3>
-              <span class="t-meta">2021 – 2024</span>
+              <span class="t-meta">2021 – 2024 · no degree</span>
             </div>
             <p class="t-desc">
-              Concurrent with full-time roles at EA and Steelcase.
+              Prioritized full-time roles at EA and Steelcase.
             </p>
           </div>
         </div>
@@ -1691,7 +1963,7 @@
 
         <div class="contact-grid">
           <div class="contact-info">
-            <p>Open to DevOps, platform engineering, and infrastructure roles. Drop a message or reach out directly.</p>
+            <p>Open to platform, DevOps, and infrastructure roles. Drop a message or reach out directly.</p>
             <div class="contact-links">
               <a class="contact-link" href="https://github.com/raduhhr" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
                 github/raduhhr
@@ -1787,46 +2059,46 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    /* ── Theme toggle (JS now always sets data-theme, so CSS only needs [data-theme="dark"]) ── */
     (function() {
-      const html = document.documentElement;
-      const btn = document.getElementById('themeToggle');
-      const icon = document.getElementById('themeIcon');
-      const label = document.getElementById('themeLabel');
-      const media = window.matchMedia('(prefers-color-scheme: dark)');
+      var html = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      var icon = document.getElementById('themeIcon');
+      var label = document.getElementById('themeLabel');
+      var media = window.matchMedia('(prefers-color-scheme: dark)');
 
-      let mode = 'system';
+      var mode = 'system';
+
+      function resolveTheme() {
+        if (mode === 'light') return 'light';
+        if (mode === 'dark') return 'dark';
+        return media.matches ? 'dark' : 'light';
+      }
 
       function applyMode(nextMode) {
         mode = nextMode;
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         if (!reducedMotion) {
           html.classList.add('theme-transitioning');
         }
 
-        if (mode === 'system') {
-          html.removeAttribute('data-theme');
-        } else {
-          html.setAttribute('data-theme', mode);
-        }
-
+        html.setAttribute('data-theme', resolveTheme());
         updateUI();
 
         if (!reducedMotion) {
-          setTimeout(() => {
+          setTimeout(function() {
             html.classList.remove('theme-transitioning');
           }, 500);
         }
       }
 
       function effectiveIsDark() {
-        if (mode === 'light') return false;
-        if (mode === 'dark') return true;
-        return media.matches;
+        return resolveTheme() === 'dark';
       }
 
       function updateUI() {
-        const isDark = effectiveIsDark();
+        var isDark = effectiveIsDark();
         icon.textContent = isDark ? '☾' : '☀';
         label.textContent = (mode === 'system') ? 'sys' : mode;
         btn.setAttribute('aria-label', 'Theme: ' + ((mode === 'system') ? 'system' : mode));
@@ -1842,18 +2114,19 @@
         applyMode(cycleMode());
       });
 
-      const onMediaChange = function() {
+      var onMediaChange = function() {
         if (mode === 'system') {
-          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          
+          var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
           if (!reducedMotion) {
             html.classList.add('theme-transitioning');
           }
-          
+
+          html.setAttribute('data-theme', resolveTheme());
           updateUI();
-          
+
           if (!reducedMotion) {
-            setTimeout(() => {
+            setTimeout(function() {
               html.classList.remove('theme-transitioning');
             }, 500);
           }
@@ -1869,15 +2142,16 @@
       applyMode('system');
     })();
 
+    /* ── Scroll reveal + mobile IO ── */
     (function() {
       var isMobile = window.innerWidth <= 768;
       var els = document.querySelectorAll('.reveal');
-      
+    
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         els.forEach(function(e){ e.classList.add('in'); });
         return;
       }
-
+    
       if (!isMobile && 'IntersectionObserver' in window) {
         var io = new IntersectionObserver(function(entries) {
           entries.forEach(function(entry){
@@ -1891,74 +2165,167 @@
       } else if (!isMobile) {
         els.forEach(function(e){ e.classList.add('in'); });
       }
-
+    
       if (isMobile && 'IntersectionObserver' in window) {
         var timelineItems = document.querySelectorAll('.t-item');
         var projectItems = document.querySelectorAll('.project');
         var heroCard = document.querySelector('.hero-card');
-        
-        var mobileIO = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry){
+
+        // Single observer for timeline items + hero card
+        var mobileListIO = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add('in-view');
             } else {
               entry.target.classList.remove('in-view');
             }
           });
-        }, { 
-          threshold: [0.2, 0.3, 0.4, 0.5],
-          rootMargin: '-35% 0px -35% 0px'
+        }, {
+          threshold: 0,
+          rootMargin: '-8% 0px -8% 0px'
         });
-        
-        timelineItems.forEach(function(item){ mobileIO.observe(item); });
-        projectItems.forEach(function(item){ mobileIO.observe(item); });
-        if (heroCard) mobileIO.observe(heroCard);
-      }
 
+        // Project cards: softer center band (was -46%, now -32%)
+        var mobileProjectIO = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+            } else {
+              entry.target.classList.remove('in-view');
+            }
+          });
+        }, {
+          threshold: 0,
+          rootMargin: '-32% 0px -32% 0px'
+        });
+
+        timelineItems.forEach(function(item){ mobileListIO.observe(item); });
+        if (heroCard) mobileListIO.observe(heroCard);
+        projectItems.forEach(function(item){ mobileProjectIO.observe(item); });
+      }
+    
       if (isMobile) {
         els.forEach(function(e){ e.classList.add('in'); });
       }
     })();
 
+
+    /* ── Mobile menu (with focus trap) ── */
     (function() {
       var btn = document.getElementById('menuToggle');
       var nav = document.querySelector('header.site nav');
       if (!btn || !nav) return;
-      
+
+      var focusableSelector = 'a[href], button:not([disabled])';
+
       function closeMenu() {
         nav.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
         btn.textContent = 'menu';
       }
-      
+
+      function trapFocus(e) {
+        if (window.innerWidth > 768) return;
+        if (!nav.classList.contains('open')) return;
+
+        var focusable = [].slice.call(nav.querySelectorAll(focusableSelector));
+        // Include the toggle button itself in the trap
+        focusable.unshift(btn);
+        if (focusable.length === 0) return;
+
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (e.key === 'Escape') {
+          closeMenu();
+          btn.focus();
+          return;
+        }
+
+        if (e.key !== 'Tab') return;
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
         var open = nav.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.textContent = open ? 'close' : 'menu';
+
+        if (open) {
+          // Focus first link when menu opens
+          var firstLink = nav.querySelector('a');
+          if (firstLink) firstLink.focus();
+          document.addEventListener('keydown', trapFocus);
+        } else {
+          document.removeEventListener('keydown', trapFocus);
+        }
       });
-      
+
       nav.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
           if (window.innerWidth <= 768) {
             closeMenu();
+            document.removeEventListener('keydown', trapFocus);
           }
         });
       });
-      
+
       document.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
           var isMenuOpen = nav.classList.contains('open');
           var clickedInsideNav = nav.contains(e.target);
           var clickedToggle = btn.contains(e.target);
-          
+
           if (isMenuOpen && !clickedInsideNav && !clickedToggle) {
             closeMenu();
+            document.removeEventListener('keydown', trapFocus);
           }
         }
       });
     })();
 
+    /* ── Lazy-load Turnstile when #contact scrolls into view ── */
+    (function() {
+      var contact = document.getElementById('contact');
+      if (!contact || !('IntersectionObserver' in window)) {
+        // Fallback: load immediately
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        s.async = true;
+        document.head.appendChild(s);
+        return;
+      }
+
+      var loaded = false;
+      var io = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting && !loaded) {
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+          s.async = true;
+          document.head.appendChild(s);
+          io.disconnect();
+        }
+      }, {
+        rootMargin: '200px 0px' // start loading slightly before it's visible
+      });
+
+      io.observe(contact);
+    })();
+
+    /* ── Touch: blur on tap to clear :focus styles ── */
     (function() {
       if ('ontouchstart' in window) {
         var buttons = document.querySelectorAll('.btn, .contact-link, nav a, .theme-toggle, .menu-toggle');
@@ -1970,36 +2337,38 @@
       }
     })();
 
+    /* ── Character count ── */
     (function() {
-      const messageField = document.getElementById('message');
-      const charCount = document.getElementById('charCount');
-      
+      var messageField = document.getElementById('message');
+      var charCount = document.getElementById('charCount');
+
       if (messageField && charCount) {
         messageField.addEventListener('input', function() {
-          const length = this.value.length;
-          charCount.textContent = `${length} / 2000`;
-          
+          var length = this.value.length;
+          charCount.textContent = length + ' / 2000';
+
           charCount.classList.remove('warning', 'error');
           if (length > 1800) {
             charCount.classList.add('error');
           } else if (length > 1600) {
             charCount.classList.add('warning');
           }
-        });
+        }, { passive: true });
       }
     })();
 
+    /* ── Validation helpers ── */
     function validateEmail(email) {
       if (!email || email.length > 254 || email.length < 3) return false;
       if (/[\r\n\t]/.test(email)) return false;
-      const pattern = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+      var pattern = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
       return pattern.test(email);
     }
 
     function showFieldError(fieldId, message) {
-      const field = document.getElementById(fieldId);
-      const errorDiv = document.getElementById(fieldId + 'Error');
-      
+      var field = document.getElementById(fieldId);
+      var errorDiv = document.getElementById(fieldId + 'Error');
+
       if (field && errorDiv) {
         field.classList.add('error');
         errorDiv.textContent = message;
@@ -2008,23 +2377,24 @@
     }
 
     function clearFieldError(fieldId) {
-      const field = document.getElementById(fieldId);
-      const errorDiv = document.getElementById(fieldId + 'Error');
-      
+      var field = document.getElementById(fieldId);
+      var errorDiv = document.getElementById(fieldId + 'Error');
+
       if (field && errorDiv) {
         field.classList.remove('error');
         errorDiv.classList.remove('show');
       }
     }
 
+    /* ── Inline validation on blur ── */
     (function() {
-      const nameField = document.getElementById('name');
-      const emailField = document.getElementById('email');
-      const messageField = document.getElementById('message');
+      var nameField = document.getElementById('name');
+      var emailField = document.getElementById('email');
+      var messageField = document.getElementById('message');
 
       if (nameField) {
         nameField.addEventListener('blur', function() {
-          const value = this.value.trim();
+          var value = this.value.trim();
           if (value && (value.length < 2 || value.length > 100)) {
             showFieldError('name', 'Name must be between 2 and 100 characters');
           } else {
@@ -2035,7 +2405,7 @@
 
       if (emailField) {
         emailField.addEventListener('blur', function() {
-          const value = this.value.trim();
+          var value = this.value.trim();
           if (value && !validateEmail(value)) {
             showFieldError('email', 'Please enter a valid email address');
           } else {
@@ -2046,7 +2416,7 @@
 
       if (messageField) {
         messageField.addEventListener('blur', function() {
-          const value = this.value.trim();
+          var value = this.value.trim();
           if (value && (value.length < 10 || value.length > 2000)) {
             showFieldError('message', 'Message must be between 10 and 2000 characters');
           } else {
@@ -2056,44 +2426,45 @@
       }
     })();
 
+    /* ── Form submission ── */
     async function handleSubmit(event) {
       event.preventDefault();
-      
+
       clearFieldError('name');
       clearFieldError('email');
       clearFieldError('message');
-      
-      const form = document.getElementById('contactForm');
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const loader = document.getElementById('loader');
-      const statusMsg = document.getElementById('statusMessage');
-      const turnstileWidget = document.querySelector('.cf-turnstile');
-      
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      
-      let hasErrors = false;
-      
+
+      var form = document.getElementById('contactForm');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var loader = document.getElementById('loader');
+      var statusMsg = document.getElementById('statusMessage');
+      var turnstileWidget = document.querySelector('.cf-turnstile');
+
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var message = document.getElementById('message').value.trim();
+
+      var hasErrors = false;
+
       if (name.length < 2 || name.length > 100) {
         showFieldError('name', 'Name must be between 2 and 100 characters');
         hasErrors = true;
       }
-      
+
       if (!validateEmail(email)) {
         showFieldError('email', 'Please enter a valid email address');
         hasErrors = true;
       }
-      
+
       if (message.length < 10 || message.length > 2000) {
         showFieldError('message', 'Message must be between 10 and 2000 characters');
         hasErrors = true;
       }
-      
+
       if (hasErrors) return false;
-      
-      const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
-      
+
+      var turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+
       if (!turnstileToken) {
         if (turnstileWidget && !window.turnstile) {
           showStatus('error', 'Security verification is still loading. Please wait a moment and try again.');
@@ -2102,40 +2473,40 @@
         showStatus('error', 'Please complete the verification challenge.');
         return false;
       }
-      
-      const formInputs = form.querySelectorAll('input, textarea, button');
-      formInputs.forEach(input => input.disabled = true);
-      
+
+      var formInputs = form.querySelectorAll('input, textarea, button');
+      formInputs.forEach(function(input) { input.disabled = true; });
+
       submitBtn.textContent = 'sending...';
       loader.style.display = 'block';
       statusMsg.style.display = 'none';
-      
-      const formData = {
-        name,
-        email,
-        message,
-        turnstileToken
+
+      var formData = {
+        name: name,
+        email: email,
+        message: message,
+        turnstileToken: turnstileToken
       };
-      
+
       try {
-        const response = await fetch('https://form-worker.raduhrr.workers.dev', {
+        var response = await fetch('https://form-worker.raduhrr.workers.dev', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         });
-        
-        const data = await response.json().catch(() => ({}));
-        
+
+        var data = await response.json().catch(function() { return {}; });
+
         if (response.ok) {
           showStatus('success', 'Message sent! I\'ll get back to you soon.');
           form.reset();
-          
-          const charCount = document.getElementById('charCount');
+
+          var charCount = document.getElementById('charCount');
           if (charCount) {
             charCount.textContent = '0 / 2000';
             charCount.classList.remove('warning', 'error');
           }
-          
+
           if (window.turnstile) {
             window.turnstile.reset();
           }
@@ -2150,24 +2521,24 @@
         console.error('Form submission error:', error);
         showStatus('error', 'Network error. Please check your connection or contact me via LinkedIn.');
       } finally {
-        formInputs.forEach(input => input.disabled = false);
+        formInputs.forEach(function(input) { input.disabled = false; });
         submitBtn.textContent = 'send()';
         loader.style.display = 'none';
       }
-      
+
       return false;
     }
 
     function showStatus(type, message) {
-      const statusMsg = document.getElementById('statusMessage');
+      var statusMsg = document.getElementById('statusMessage');
       statusMsg.style.display = 'block';
       statusMsg.textContent = message;
 
       statusMsg.classList.remove('success', 'error');
       statusMsg.classList.add(type);
-      
+
       if (type === 'success') {
-        setTimeout(() => {
+        setTimeout(function() {
           statusMsg.style.display = 'none';
         }, 8000);
       }
